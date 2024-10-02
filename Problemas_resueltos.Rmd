@@ -1,0 +1,200 @@
+---
+title: "Problemas_resueltos"
+author: "Magdalena Ceballos Rodríguez"
+date: "2024-2025"
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+    toc_depth: 5
+lang: es
+number-sections: true
+toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE}
+library(knitr)
+library(kableExtra)
+```
+
+
+# PROBLEMA 1 (Magdalena)
+
+Aplica los criterios de decisión bajo incertidumbre al problema cuya matriz de valores numéricos viene dada en la tabla siguiente:
+
+
+
+|         | $e_1$ | $e_2$ | $e_3$ |
+|:----------:|:----------:|:----------:|:----------:|
+| $d_1$   |  50   |  30   |   10   |
+| $d_1$   |  70   |  20   |   5    |
+| $d_1$   |  40   |  -7   |   15   |  
+
+
+Resolver considerando las siguientes situaciones:
+
+  a) Beneficios (favorable)
+  
+  b) Costos (desfavorable)
+  
+## Solución apartado a) Beneficios (favorable)
+
+```{r, echo=FALSE}
+tab01a <- crea.tablaX(c(50, 30,10,
+                        70, 20, 5,
+                         40, -7, 15), numalternativas = 3, numestados = 3)
+```
+
+
+**Criterio de Wald**
+```{r, echo=FALSE}
+(sol01a_Wald <- criterio.Wald(tab01a))
+cat("La alternativa óptima según el criterio de Wald es", names(sol01a_Wald$AlternativaOptima), "siendo el valor óptimo", sol01a_Wald$ValorOptimo)
+```
+
+**Criterio Optimista**
+```{r, echo=FALSE}
+(sol01a_optimista <- criterio.Optimista(tab01a))
+cat("La alternativa óptima según el criterio optimista es", names(sol01a_optimista$AlternativaOptima), "siendo el valor óptimo", sol01a_optimista$ValorOptimo)
+```
+
+**Criterio de Hurwicz**
+```{r, echo=FALSE}
+(sol01a_hurwicz <- criterio.Hurwicz(tab01a))
+cat("La alternativa óptima según el criterio de Hurwicz es", names(sol01a_hurwicz$AlternativaOptima), "siendo el valor óptimo", sol01a_hurwicz$ValorOptimo)
+```
+
+```{r, echo=FALSE}
+dibuja.criterio.Hurwicz(tab01a)
+dibuja.criterio.Hurwicz_Intervalos(tab01a)
+```
+
+**Criterio de Savage**
+```{r, echo=FALSE}
+(sol01a_savage <- criterio.Savage(tab01a))
+cat("La alternativa óptima según el criterio de Savage es", names(sol01a_savage$AlternativaOptima), "siendo el valor óptimo", sol01a_savage$ValorOptimo)
+```
+
+**Criterio de Laplace**
+```{r, echo=FALSE}
+(sol01a_laplace <- criterio.Laplace(tab01a))
+cat("La alternativa óptima según el criterio de Laplace es", names(sol01a_laplace$AlternativaOptima), "siendo el valor óptimo", sol01a_laplace$ValorOptimo)
+```
+
+**Criterio de Punto Ideal**
+```{r, echo=FALSE}
+(sol01a_puntoideal <- criterio.PuntoIdeal(tab01a))
+cat("La alternativa óptima según el criterio de Punto Ideal es", names(sol01a_puntoideal$AlternativaOptima), "siendo el valor óptimo", sol01a_puntoideal$ValorOptimo)
+```
+
+
+
+## Solución apartado b) Costos (desfavorable)
+```{r, echo=FALSE}
+tab01b <- crea.tablaX(c(50, 30,10,
+                        70, 20, 5,
+                         40, -7, 15), numalternativas = 3, numestados = 3)
+```
+
+**Criterio de Wald**
+```{r, echo=FALSE}
+(sol01b_Wald <- criterio.Wald(tab01b, F))
+cat("La alternativa óptima según el criterio de Wald es", names(sol01b_Wald$AlternativaOptima), "siendo el valor óptimo", sol01b_Wald$ValorOptimo)
+```
+
+**Criterio Optimista**
+```{r, echo=FALSE}
+(sol01b_optimista <- criterio.Optimista(tab01b, F))
+cat("La alternativa óptima según el criterio optimista es", names(sol01b_optimista$AlternativaOptima), "siendo el valor óptimo", sol01b_optimista$ValorOptimo)
+```
+
+**Criterio de Hurwicz**
+```{r, echo=FALSE}
+(sol01b_hurwicz <- criterio.Hurwicz(tab01b,F))
+cat("La alternativa óptima según el criterio de Hurwicz es", names(sol01b_hurwicz$AlternativaOptima), "siendo el valor óptimo", sol01b_hurwicz$ValorOptimo)
+```
+
+```{r, echo=FALSE}
+dibuja.criterio.Hurwicz(tab01b,F)
+```
+
+**Criterio de Savage**
+```{r, echo=FALSE}
+(sol01b_savage <- criterio.Savage(tab01b, F))
+cat("La alternativa óptima según el criterio de Savage es", names(sol01b_savage$AlternativaOptima), "siendo el valor óptimo", sol01b_savage$ValorOptimo)
+```
+
+**Criterio de Laplace**
+```{r, echo=FALSE}
+(sol01b_laplace <- criterio.Laplace(tab01b,F))
+cat("La alternativa óptima según el criterio de Laplace es", names(sol01b_laplace$AlternativaOptima), "siendo el valor óptimo", sol01b_laplace$ValorOptimo)
+```
+
+**Criterio de Punto Ideal**
+```{r, echo=FALSE}
+(sol01b_puntoideal <- criterio.PuntoIdeal(tab01b, F))
+cat("La alternativa óptima según el criterio de Punto Ideal es", names(sol01b_puntoideal$AlternativaOptima), "siendo el valor óptimo", sol01b_puntoideal$ValorOptimo)
+```
+
+
+
+# PROBLEMA 2 (Magdalena)
+
+Enunciado del problema:
+
+Contexto: María es una emprendedora que está considerando invertir en uno de tres proyectos para expandir su negocio de venta de productos orgánicos. Cada proyecto implica diferentes riesgos y rentabilidades, y el éxito de estos depende del estado de la economía en el próximo año. María no puede predecir con certeza cuál será el estado de la economía, pero puede identificar tres posibles escenarios: crecimiento económico, estabilidad económica y recesión.
+
+Proyectos:
+
+  -   *Proyecto A*: Ampliación del local físico
+María puede invertir en la ampliación de su local actual, lo que le permitiría atraer a más clientes y ofrecer una mayor variedad de productos.
+
+  -   *Proyecto B*: Expansión a ventas en línea
+María puede desarrollar una plataforma de ventas en línea, lo que le permitiría llegar a más clientes fuera de su área geográfica y aprovechar el crecimiento del comercio electrónico.
+
+  -   *Proyecto C*: Introducción de nuevos productos premium
+María puede diversificar su línea de productos ofreciendo una gama de productos orgánicos premium de mayor calidad y precio, con el objetivo de captar un segmento de clientes de alto poder adquisitivo.
+
+Estados de la naturaleza:
+
+  -   *Crecimiento económico*: La economía se expande, lo que genera un aumento en el consumo y en el poder adquisitivo de los consumidores.
+
+  -   *Estabilidad económica*: La economía se mantiene estable, sin grandes cambios en el comportamiento del mercado.
+
+  -   *Recesión económica*: La economía sufre una contracción, disminuyendo el poder adquisitivo de los consumidores y la demanda general.
+
+Datos financieros estimados: María ha estimado los posibles beneficios (en miles de dólares) para cada proyecto, dependiendo del estado de la economía:
+
+
+
+|           |  Proyecto A|  Proyecto B| Proyecto C |
+|:----------:|:----------:|:----------:|:----------:|
+| Crecimiento  |  150   |  200   |   180   |
+| Estabilidad  |  100  |  120   |   80   |
+|  Recesión    |  30   |  70   |   -20   |  
+
+Pregunta: ¿Cuál es el proyecto que María debería elegir bajo cada uno de los métodos de decisión mencionados?
+
+```{r, echo=FALSE}
+tab02 <- crea.tablaX(c(150, 200,180,
+                       100, 120,80,
+                       30, 70,-20), numalternativas = 3, numestados = 3)
+rownames(tab02) <- c("Crecimiento", "Estabilidad", "Recesión")
+colnames(tab02) <- c("Proyecto A", "Proyecto B","Proyecto C")
+tab02 %>%
+  kable(booktabs = TRUE,format = "latex") %>%
+  kable_styling(latex_options = c("striped", "condensed","HOLD_position"), 
+                position = "center",
+                full_width = FALSE)
+sol02 <- criterio.Todos(tab02, alfa = 0.5, F)
+sol02 %>%
+  kable(booktabs = TRUE,format = "latex") %>%
+  kable_styling(latex_options = c("striped", "condensed","HOLD_position"), 
+                position = "center",
+                full_width = TRUE)
+```
