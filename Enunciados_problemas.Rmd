@@ -1,0 +1,69 @@
+---
+title: "Enunciados"
+author: "Magdalena Ceballos Rodríguez"
+date: "2024-2025"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# ENUNCIADOS MAGDALENA 
+
+## PROBLEMA 1 
+
+Aplica los criterios de decisión bajo incertidumbre al problema cuya matriz de valores numéricos viene dada en la tabla siguiente:
+
+
+
+|         | $e_1$ | $e_2$ | $e_3$ |
+|:----------:|:----------:|:----------:|:----------:|
+| $d_1$   |  50   |  30   |   10   |
+| $d_1$   |  70   |  20   |   5    |
+| $d_1$   |  40   |  -7   |   15   |  
+
+
+Resolver considerando las siguientes situaciones:
+
+  a) Beneficios (favorable)
+  
+  b) Costos (desfavorable)
+
+
+## PROBLEMA 2 
+
+Enunciado del problema:
+
+Contexto: María es una emprendedora que está considerando invertir en uno de tres proyectos para expandir su negocio de venta de productos orgánicos. Cada proyecto implica diferentes riesgos y rentabilidades, y el éxito de estos depende del estado de la economía en el próximo año. María no puede predecir con certeza cuál será el estado de la economía, pero puede identificar tres posibles escenarios: crecimiento económico, estabilidad económica y recesión.
+
+Proyectos:
+
+  -   *Proyecto A*: Ampliación del local físico
+María puede invertir en la ampliación de su local actual, lo que le permitiría atraer a más clientes y ofrecer una mayor variedad de productos.
+
+  -   *Proyecto B*: Expansión a ventas en línea
+María puede desarrollar una plataforma de ventas en línea, lo que le permitiría llegar a más clientes fuera de su área geográfica y aprovechar el crecimiento del comercio electrónico.
+
+  -   *Proyecto C*: Introducción de nuevos productos premium
+María puede diversificar su línea de productos ofreciendo una gama de productos orgánicos premium de mayor calidad y precio, con el objetivo de captar un segmento de clientes de alto poder adquisitivo.
+
+Estados de la naturaleza:
+
+  -   *Crecimiento económico*: La economía se expande, lo que genera un aumento en el consumo y en el poder adquisitivo de los consumidores.
+
+  -   *Estabilidad económica*: La economía se mantiene estable, sin grandes cambios en el comportamiento del mercado.
+
+  -   *Recesión económica*: La economía sufre una contracción, disminuyendo el poder adquisitivo de los consumidores y la demanda general.
+
+Datos financieros estimados: María ha estimado los posibles beneficios (en miles de dólares) para cada proyecto, dependiendo del estado de la economía:
+
+
+
+|           |  Proyecto A|  Proyecto B| Proyecto C |
+|:----------:|:----------:|:----------:|:----------:|
+| Crecimiento  |  150   |  200   |   180   |
+| Estabilidad  |  100  |  120   |   80   |
+|  Recesión    |  30   |  70   |   -20   |  
+
+Pregunta: ¿Cuál es el proyecto que María debería elegir bajo cada uno de los métodos de decisión mencionados?
