@@ -20,6 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, echo=FALSE}
 library(knitr)
 library(kableExtra)
+source("teoriadecision_funciones_incertidumbre.R")
 ```
 
 
