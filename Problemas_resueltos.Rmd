@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, include=FALSE}
 library(knitr)
 library(kableExtra)
 source("teoriadecision_funciones_incertidumbre.R")
@@ -148,9 +148,9 @@ cat("La alternativa óptima según el criterio de Punto Ideal es", names(sol01b_
 
 Enunciado del problema:
 
-Contexto: María es una emprendedora que está considerando invertir en uno de tres proyectos para expandir su negocio de venta de productos orgánicos. Cada proyecto implica diferentes riesgos y rentabilidades, y el éxito de estos depende del estado de la economía en el próximo año. María no puede predecir con certeza cuál será el estado de la economía, pero puede identificar tres posibles escenarios: crecimiento económico, estabilidad económica y recesión.
+**Contexto**: María es una emprendedora que está considerando invertir en uno de tres proyectos para expandir su negocio de venta de productos orgánicos. Cada proyecto implica diferentes riesgos y rentabilidades, y el éxito de estos depende del estado de la economía en el próximo año. María no puede predecir con certeza cuál será el estado de la economía, pero puede identificar tres posibles escenarios: crecimiento económico, estabilidad económica y recesión.
 
-Proyectos:
+**Proyectos**:
 
   -   *Proyecto A*: Ampliación del local físico
 María puede invertir en la ampliación de su local actual, lo que le permitiría atraer a más clientes y ofrecer una mayor variedad de productos.
@@ -161,7 +161,7 @@ María puede desarrollar una plataforma de ventas en línea, lo que le permitir�
   -   *Proyecto C*: Introducción de nuevos productos premium
 María puede diversificar su línea de productos ofreciendo una gama de productos orgánicos premium de mayor calidad y precio, con el objetivo de captar un segmento de clientes de alto poder adquisitivo.
 
-Estados de la naturaleza:
+**Estados de la naturaleza**:
 
   -   *Crecimiento económico*: La economía se expande, lo que genera un aumento en el consumo y en el poder adquisitivo de los consumidores.
 
@@ -173,18 +173,13 @@ Datos financieros estimados: María ha estimado los posibles beneficios (en mile
 
 
 
-|           |  Proyecto A|  Proyecto B| Proyecto C |
-|:----------:|:----------:|:----------:|:----------:|
-| Crecimiento  |  150   |  200   |   180   |
-| Estabilidad  |  100  |  120   |   80   |
-|  Recesión    |  30   |  70   |   -20   |  
-
-Pregunta: ¿Cuál es el proyecto que María debería elegir bajo cada uno de los métodos de decisión mencionados?
-
 ```{r, echo=FALSE}
 tab02 <- crea.tablaX(c(150, 200,180,
                        100, 120,80,
                        30, 70,-20), numalternativas = 3, numestados = 3)
+```
+
+```{r, echo=FALSE}
 rownames(tab02) <- c("Crecimiento", "Estabilidad", "Recesión")
 colnames(tab02) <- c("Proyecto A", "Proyecto B","Proyecto C")
 tab02 %>%
@@ -192,10 +187,37 @@ tab02 %>%
   kable_styling(latex_options = c("striped", "condensed","HOLD_position"), 
                 position = "center",
                 full_width = FALSE)
+
+```
+
+**Pregunta**: ¿Cuál es el proyecto que María debería elegir bajo cada uno de los métodos de decisión mencionados?
+
+
+
+
+
+La tabla a continuación resume las decisiones óptimas para cada uno de los métodos de decisión aplicados (Wald, Optimista, Hurwicz, Savage, Laplace y el Punto Ideal). Estos métodos toman en cuenta los posibles escenarios económicos (crecimiento, estabilidad y recesión) y los beneficios estimados para cada uno de los tres proyectos (A, B y C) que María está considerando. Cada método ofrece un enfoque diferente para la toma de decisiones bajo incertidumbre.
+
+
+
+```{r, echo=FALSE}
 sol02 <- criterio.Todos(tab02, alfa = 0.5, F)
 sol02 %>%
   kable(booktabs = TRUE,format = "latex") %>%
   kable_styling(latex_options = c("striped", "condensed","HOLD_position"), 
                 position = "center",
                 full_width = TRUE)
+
 ```
+
+
+
+**Resumen**:
+
+El Proyecto B es preferido bajo los criterios Wald y Optimista.
+
+El Proyecto A es preferido bajo los criterios Hurwicz, Savage, Laplace y Punto Ideal.
+
+Todos los métodos indican que el escenario más desfavorable para la toma de decisiones es la Recesión.
+
+En general, el Proyecto A parece ser el más robusto bajo la mayoría de los métodos, ya que ofrece un equilibrio entre los diferentes escenarios económicos.

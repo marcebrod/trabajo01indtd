@@ -5,10 +5,6 @@ date: "2024-2025"
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # ENUNCIADOS MAGDALENA 
 
 ## PROBLEMA 1 
@@ -35,9 +31,9 @@ Resolver considerando las siguientes situaciones:
 
 Enunciado del problema:
 
-Contexto: María es una emprendedora que está considerando invertir en uno de tres proyectos para expandir su negocio de venta de productos orgánicos. Cada proyecto implica diferentes riesgos y rentabilidades, y el éxito de estos depende del estado de la economía en el próximo año. María no puede predecir con certeza cuál será el estado de la economía, pero puede identificar tres posibles escenarios: crecimiento económico, estabilidad económica y recesión.
+**Contexto**: María es una emprendedora que está considerando invertir en uno de tres proyectos para expandir su negocio de venta de productos orgánicos. Cada proyecto implica diferentes riesgos y rentabilidades, y el éxito de estos depende del estado de la economía en el próximo año. María no puede predecir con certeza cuál será el estado de la economía, pero puede identificar tres posibles escenarios: crecimiento económico, estabilidad económica y recesión.
 
-Proyectos:
+**Proyectos**:
 
   -   *Proyecto A*: Ampliación del local físico
 María puede invertir en la ampliación de su local actual, lo que le permitiría atraer a más clientes y ofrecer una mayor variedad de productos.
@@ -48,7 +44,7 @@ María puede desarrollar una plataforma de ventas en línea, lo que le permitir�
   -   *Proyecto C*: Introducción de nuevos productos premium
 María puede diversificar su línea de productos ofreciendo una gama de productos orgánicos premium de mayor calidad y precio, con el objetivo de captar un segmento de clientes de alto poder adquisitivo.
 
-Estados de la naturaleza:
+**Estados de la naturaleza**:
 
   -   *Crecimiento económico*: La economía se expande, lo que genera un aumento en el consumo y en el poder adquisitivo de los consumidores.
 
@@ -64,6 +60,7 @@ Datos financieros estimados: María ha estimado los posibles beneficios (en mile
 |:----------:|:----------:|:----------:|:----------:|
 | Crecimiento  |  150   |  200   |   180   |
 | Estabilidad  |  100  |  120   |   80   |
-|  Recesión    |  30   |  70   |   -20   |  
+|  Recesión    |  30   |  70   |   -20   | 
 
-Pregunta: ¿Cuál es el proyecto que María debería elegir bajo cada uno de los métodos de decisión mencionados?
+
+**Pregunta**: ¿Cuál es el proyecto que María debería elegir bajo cada uno de los métodos de decisión mencionados?
