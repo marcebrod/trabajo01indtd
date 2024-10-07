@@ -23,6 +23,6 @@ Este repositorio contiene la resolución de dos problemas de Teoría de la Decis
 
 ## Requisitos del proyecto
 
-- **3 commits** con cambios importantes.
-- **2 issues** o incidencias creadas en GitHub para gestionar el avance del proyecto.
+- **Al menos 3 commits** con cambios importantes.
+- **Al menos 2 issues** o incidencias creadas en GitHub para gestionar el avance del proyecto.
 
